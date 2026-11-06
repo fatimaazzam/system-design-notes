@@ -187,3 +187,13 @@ This allows different services to <span style="color: #3FB950;"><strong>consume 
 ## 6. Practical Examples
 
 ## 7. References
+
+## Key Kafka Concepts
+
+| Concept | Purpose |
+|---|---|
+| Producer | Publishes events to Kafka. |
+| Consumer | Reads and processes events from Kafka. |
+| Partition | Distributes events and preserves ordering within each partition. |
+| Consumer Group | Allows multiple consumers to process partitions in parallel. |
+| Topic | Organizes events into categories. |
