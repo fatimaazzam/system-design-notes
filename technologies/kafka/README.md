@@ -52,7 +52,7 @@ One solution is to use a message queue. The application responsible for publishi
 ![Producers add events to a queue, and consumers read them from it](images/food_delivery_events_in_queue.png)
 
 ### What happens when the platform grows?
-    Now imagine our platform becomes extremely popular. Instead of hundreds of orders, we receive hundreds of thousands of orders every minute.
+Now imagine our platform becomes extremely popular. Instead of hundreds of orders, we receive hundreds of thousands of orders every minute.
 
 A single server handling all these events may no longer be able to keep up. We need to distribute the workload across multiple servers.
 
