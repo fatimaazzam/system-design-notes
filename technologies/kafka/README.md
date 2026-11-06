@@ -29,6 +29,8 @@ Apache Kafka is an open-source, distributed event streaming platform used to col
     This helps Kafka handle large amounts of data, scale, and tolerate server failures.
 
 ![Kafka event flow](images/kafka-flow.png)
+*Figure 1: How Kafka enables communication between services through events.*
+
 ### What is Kafka?
 
 ### What problem does it solve?
