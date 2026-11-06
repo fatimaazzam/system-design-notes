@@ -162,6 +162,40 @@ This allows different services to <span style="color: #3FB950;"><strong>consume 
   </em>
 </p>
 
+
+<p align="center">
+  <img
+    src="images/food_delivery_topics_partitions_consumer_groups.png"
+    alt="Food delivery Kafka architecture showing producers, topics, partitions, consumer groups, and consumers"
+    width="900"
+  />
+</p>
+
+<p align="center">
+  <em>
+    Figure: Food delivery event-driven architecture using Kafka.
+    Producers publish events to topics, topics are divided into partitions,
+    and consumer groups subscribe to the topics they need.
+  </em>
+</p>
+
+**Topic and consumer distribution:**
+
+- 🔵 **`orders` topic:** The Order service and Restaurant publish events here. The Analytics consumer group subscribes to this topic.
+- 🟢 **`deliveries` topic:** The Delivery service publishes events here. The Notification consumer group subscribes to this topic.
+
+**Partitioning strategy:**
+
+- Events are distributed based on `orderId`, ensuring that events belonging to the same order always go to the same partition.
+- For example, **Order #42** always goes to **Partition 0**, while **Order #57** goes to **Partition 1**.
+- New events are appended to the right of their respective partitions.
+
+**Consumer groups:**
+
+- Each consumer group reads from its subscribed topic.
+- Within each consumer group, each consumer is assigned a partition at a time, allowing parallel processing while preserving event ordering within each partition.
+
+
 ### What is Kafka?
 
 ### What problem does it solve?
